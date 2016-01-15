@@ -14,6 +14,7 @@
     <option each="{option in options}" value="{option.value}">{option.label}</option>
   </select>
 
-  neo.inject.call(this, neo.DropDown);
+  this.mixin(neo.DropDown);
+ 
 
 </dropdown>

@@ -8,17 +8,21 @@ neo.TextEditorMgr = {
 }
 
 neo.TextEditor = $.extend(true, {}, neo.Module, {
-  construct : function(options) {
+  init : function() {
+    this.on('mount', this.setup);
+  },
+
+  setup : function() {
     var editorId = neo.TextEditorMgr.getId();
-    var $editorEl = $(this.tag.root).find('div');
+    var $editorEl = $(this.root).find('div');
     $editorEl.attr('id', 'editor-' + editorId);
 
-    if (options) {
-      if (typeof options.text != 'undefined') {
-        $editorEl.html(options.text);
-      }
+    var options = this.opts.dataOptions;
+
+    if (typeof options.text != 'undefined') {
+      $editorEl.html(options.text);
     }
-    
+
     tinymce.init({
       selector : '#editor-' + editorId
     });
