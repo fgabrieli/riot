@@ -1,5 +1,5 @@
-neo.DropDown = $.extend(true, {}, neo.Module, {
+neo.DropDown = {
   init : function() {
     this.options = this.opts.dataOptions;
   }
-});
+}

@@ -7,7 +7,7 @@ neo.TextEditorMgr = {
   }
 }
 
-neo.TextEditor = $.extend(true, {}, neo.Module, {
+neo.TextEditor = {
   init : function() {
     this.on('mount', this.setup);
   },
@@ -27,4 +27,4 @@ neo.TextEditor = $.extend(true, {}, neo.Module, {
       selector : '#editor-' + editorId
     });
   }
-});
+}
