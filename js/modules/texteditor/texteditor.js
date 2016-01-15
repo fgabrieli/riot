@@ -1,3 +1,4 @@
+// unique instance
 neo.TextEditorMgr = {
   editorId : 0,
 
