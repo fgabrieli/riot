@@ -1,0 +1,76 @@
+<html>
+
+<head>
+
+<!-- 3rd party lib -->
+<script src="https://cdn.rawgit.com/riot/riot/master/riot+compiler.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+
+<!-- app -->
+<script src="js/app.js"></script>
+
+<!-- helpers -->
+<script src="js/helpers/inject.js"></script>
+
+<!-- modules -->
+<script src="js/modules/dropdown/dropdown.js"></script>
+<script src="js/modules/dropdown/dropdown.tag" type="riot/tag"></script>
+
+<script src="js/modules/texteditor/texteditor.js"></script>
+<script src="js/modules/texteditor/texteditor.tag" type="riot/tag"></script>
+
+<style>
+body {
+  font-family: Calibri;
+}
+
+texteditor div {
+  border: 1px solid #036;
+  padding: 5px;
+}
+
+.leave-some-space {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  
+}
+</style>
+
+</head>
+
+<body>
+
+  <dropdown data-options="[{
+      label : 'Mike',
+      value : 'mike'
+    }, {
+      label : 'Paul',
+      value : 'paul'
+    }]"> </dropdown>
+
+  <div class="leave-some-space"></div>
+
+  <dropdown data-options="[{
+      label : 'John',
+      value : 'john'
+    }, {
+      label : 'Nick',
+      value : 'nick'
+    }]"> </dropdown>
+
+  <div class="leave-some-space"></div>
+
+  <texteditor data-options="{text : 'Hello Lorem!'}"></texteditor>
+
+  <div class="leave-some-space"></div>
+
+  <texteditor data-options="{text : 'Bye Ipsum!'}"></texteditor>
+
+  <script>
+      riot.mount('*');
+    </script>
+
+</body>
+
+</html>
